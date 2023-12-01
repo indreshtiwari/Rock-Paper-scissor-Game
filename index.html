@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer="true"></script>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <!-- Score Board -->
+    <div class="score_board">
+        <div class="title">
+            <p>ROCK</p>
+            <p>PAPER</p>
+            <p>SCISSORS</p>
+        </div>
+        <div class="scores">
+            <div class="com_score">
+                <p>Computer <br> Score</p>
+                <p id="com_score">0</p>
+            </div>
+            <div class="user_score">
+                <p>User <br> Score</p>
+                <p id="user_score">0</p>
+            </div>
+        </div>
+    </div>
+    <!-- Game Screen -->
+    <div class="game_screen">
+       <div class="row1">
+            <img onclick="startGame('rock')" class="rock_img" src="images/stone-image.png" alt="">
+            <hr>
+            <img onclick="startGame('scissor')" class="scissor_img" src="images/scissor-image.png" alt="">
+       </div> 
+       <div class="row2">
+            <img onclick="startGame('paper')" class="paper_img" src="images/paper-image.png" alt="">
+       </div>
+
+    </div>
+    <hr class="line1">
+    <hr class="line2">
+
+    <!-- result Screen  -->
+    <div class="result_screen">
+    <div class="left">
+        <h1>YOU PICKED</h1>
+        <div class="user_box_1">
+          <div class="user_box_2">
+            <div class="user_box_3">
+                <div class="user_img">
+                     <img class="result_user_img" src="images/paper-image.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="text">
+            <h1 class="result_win_heading">YOU WON !</h1>
+            <P>AGAINST PC</P>
+            <button onclick="playAgain()" class="play_again">PLAY AGAIN</button>
+        </div>
+        <div class="right">
+        <h1>PC PICKED</h1>
+        <div class="pc_box_1">
+            <div class="pc_box_2">
+                <div class="pc_box_3">
+                    <div class="pc_img">
+                       <img class="result_pc_img" src="images/stone-image.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Last two buttons  -->
+    <div class="buttons">
+        <button onclick="Rules('show')" id="rules_btn" class="rules_btn"> RULES</button>
+        <button onclick="showHurray()" class="next_btn"> NEXT</button>
+    </div>
+
+    <!-- rules modal screen  -->
+    <div id="rules_modal" class="rules_modal">
+        <button onclick="Rules()" class="close">X</button>
+        <h1>GAME RULES</h1>
+        <ol>
+            <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+            <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+            <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+            <li>If both players lay down the same hand, each player lays down another hand</li>
+        </ol>
+    </div>
+
+    <!-- Won Game Hurray Screen  -->
+    <div class="won_game">
+        <img class="stars" src="assets/stars.png" alt="">
+        <img class="trophy" src="assets/trophy.png" alt="">
+        <h1 class="won_game_heading">HURRAY!</h1>
+        <h6 class="won_game_sub_heading">YOU WON THE GAME</h6>
+        <button onclick="playAgain()" class="play_again">Play Again</button>
+        
+    </div>
+    <div>
+        <button class="rules_btn_won">RULES</button>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>

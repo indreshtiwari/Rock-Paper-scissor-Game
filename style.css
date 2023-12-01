@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  background-color: #8cc461;
+}
+.score_board {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid white;
+  border-radius: 2rem;
+  width: 60rem;
+  margin: 2rem auto;
+  /* display: none; */
+}
+.scores {
+  display: flex;
+  flex-direction: row;
+}
+.title {
+  padding-left: 2rem;
+}
+.title p {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.3rem;
+  letter-spacing: 4px;
+}
+.com_score,
+.user_score {
+  color: #656565;
+  font-family: Roboto;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.7px;
+  text-align: center;
+  margin: 1.5rem;
+  background-color: white;
+  width: 10rem;
+  border-radius: 2rem;
+  line-height: 1.6rem;
+}
+
+#com_score,
+#user_score {
+  font-size: 3.5rem;
+  margin: 1rem;
+  margin-bottom: 1.5rem;
+}
+.rock_img {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  padding: 1.3rem;
+  outline: 10px solid #0074b6;
+  background-color: white;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.scissor_img {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  padding: 1.3rem;
+  outline: 10px solid #bd00ff;
+  background-color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.paper_img {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  padding: 1.3rem;
+  outline: 10px solid #ffa943;
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  left: 38%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.rock_img:hover,
+.scissor_img:hover,
+.paper_img:hover {
+  transform: scale(1.2);
+}
+.paper_img_result {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  padding: 1.3rem;
+  outline: 10px solid #ffa943;
+  background-color: white;
+  cursor: pointer;
+}
+hr {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.64);
+  width: 35%;
+  height: 1.3rem;
+  margin-bottom: 3rem;
+  margin-left: 0.25rem;
+  outline: none;
+  border: none;
+}
+.row1 {
+  width: 30rem;
+  margin: auto;
+}
+.row2 {
+  margin: 6rem auto;
+  position: relative;
+  width: 43rem;
+}
+
+.game_screen {
+  margin: auto;
+}
+
+.line1 {
+  position: absolute;
+  transform: rotate(55deg);
+  width: 15%;
+  top: 54%;
+  left: 37%;
+  z-index: -1;
+  display: block;
+}
+
+.line2 {
+  position: absolute;
+  transform: rotate(-55deg);
+  width: 15%;
+  top: 54%;
+  left: 44%;
+  z-index: -1;
+  display: block;
+}
+
+.result_screen {
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  width: 50rem;
+  margin: 5rem auto;
+}
+.left h1,
+.right h1 {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.7px;
+}
+.text {
+  margin: auto;
+}
+.text h1 {
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 2.5rem;
+  font-style: normal;
+  letter-spacing: 3px;
+  margin-bottom: 0;
+}
+.text p {
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+.text button {
+  color: #6b6b6b;
+  padding: 0.7rem 1.2rem;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1px;
+  border-radius: 9px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+.buttons {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.buttons button {
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background: #8cc461;
+  color: white;
+  padding: 0.5rem 2rem;
+  letter-spacing: 1px;
+  margin: 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+.buttons button:hover {
+  background-color: white;
+  color: grey;
+}
+.next_btn {
+  display: none;
+}
+
+.rules_modal {
+  border-radius: 13px;
+  border: 7px solid #fff;
+  background: #004429;
+  width: 20rem;
+  color: white;
+  padding: 1rem 1rem 1rem 0rem;
+  position: absolute;
+  top: 35%;
+  left: 75%;
+  display: none;
+  animation: moveModal 0.2s;
+}
+@keyframes moveModal {
+  0% {
+    left: 70%;
+  }
+  100% {
+    left: 75%;
+  }
+}
+.rules_modal h1 {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+li {
+  list-style: square;
+  padding-bottom: 1rem;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2rem;
+}
+li::marker {
+  color: yellow;
+  font-size: 2rem;
+}
+.close {
+  background-color: red;
+  height: auto;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  border: 5px solid white;
+  border-radius: 50%;
+  padding: 0.5rem 0.9rem;
+  position: absolute;
+  left: 90%;
+  bottom: 95%;
+  cursor: pointer;
+}
+.close:hover {
+  opacity: 0.5;
+}
+.won_game {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 14rem;
+}
+.stars {
+  position: absolute;
+  top: 15%;
+  left: 35%;
+}
+.trophy {
+  margin-left: 2rem;
+}
+.won_game_heading {
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 9.1px;
+  margin-left: 2rem;
+  margin-bottom: 0;
+}
+.won_game_sub_heading {
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 4.1px;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.play_again {
+  border-radius: 9px;
+  background: #fff;
+  color: #6b6b6b;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: color 0.2s;
+}
+.play_again:hover {
+  background-color: #6b6b6b;
+  color: #fff;
+}
+.rules_btn_won {
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background: #8cc461;
+  color: white;
+  padding: 0.5rem 2rem;
+  letter-spacing: 1px;
+  margin: 0.7rem;
+  cursor: pointer;
+  margin-left: 85rem;
+  margin-top: 4rem;
+  display: none;
+}
+
+.winner-box-3 {
+  padding: 3rem;
+  background-color: #3b6720;
+  border-radius: 50%;
+}
+.winner-box-2 {
+  padding: 2rem;
+  background-color: #1da82bc9;
+  border-radius: 50%;
+}
+.winner-box-1 {
+  padding: 1rem;
+  background: #29882163;
+  box-shadow: 0px 1px 62px rgba(0, 0, 0, 0.13);
+  border-radius: 50%;
+  margin-top: 0;
+}
+.user_box_1,
+.pc_box_1 {
+  margin-top: 3rem;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
